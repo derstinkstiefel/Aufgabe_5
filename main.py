@@ -11,12 +11,23 @@ sex = input("Enter sex (male/female): ")
 age = int(input("Enter age: "))
 
 # Erstellen der Person und des Experiments 
-person = build_person(first_name, last_name, sex, age)
-experiment = build_experiment(experiment_name, date, supervisor, subject)
+#person = build_person(first_name, last_name, sex, age)
+#experiment = build_experiment(experiment_name, date, supervisor, subject)
 # Mergen des Experiments
-total_experiment = {**person, **experiment}
-print("Person information:")
-print(total_experiment)
+#total_experiment = {**person, **experiment}
+#print("Person information:")
+#print(total_experiment)
 
-with open('Data/Experiment_data.json', 'w') as datei:
-    json.dump(total_experiment, datei, indent=4)
+#with open('Data/Experiment_data.json', 'w') as datei:
+   #json.dump(total_experiment, datei, indent=4)
+
+person = Person(first_name, last_name, sex, age)
+experiment = Experiment(experiment_name, date, supervisor, subject)
+
+person.save('Data/Person_data.json')
+experiment.save('Data/Experiment_data.json')
+
+print("Person information:")
+print(person.__dict__)
+print("Experiment information:")
+print(experiment.__dict__)
