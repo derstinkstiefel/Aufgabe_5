@@ -1,5 +1,7 @@
 from my_functions import build_experiment, estimate_max_hr, build_person
 import json 
+from my_classes import Person, Experiment
+
 #aufrufen der Inputs
 experiment_name = input("Enter name of the Experiment: ")
 date = input("when was the experiment taken?: ")
