@@ -23,10 +23,23 @@ class Person:
             # der input() öffnet ein Eingabefenster für den Nutzer und speichert die Eingabe
             max_hr_bpm  = input("Enter maximum heart rate:")
         return int(max_hr_bpm)
+    
+#subklassen für die mainclass Person erstellen
+class Supervisor(Person):
+    def __init__(self, first_name, last_name ):
+        super().__init__(first_name, last_name)
+
+class Subject(Person):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+
 
 class Experiment:
-    def __init__(self, experiment_name):
+    def __init__(self, experiment_name, date, supervisor, subject):
         self.experiment_name = experiment_name
+        self.date = date
+        self.supervisor = supervisor
+        self.subject = subject
 
     def save(self, filename):
         with open(filename, 'w') as f:
