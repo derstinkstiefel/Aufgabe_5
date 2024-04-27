@@ -26,12 +26,12 @@ class Person:
     
 #subklassen für die mainclass Person erstellen
 class Supervisor(Person):
-    def __init__(self, first_name, last_name ):
-        super().__init__(first_name, last_name)
+    def __init__(self, first_name, last_name, age, sex):
+        super().__init__(first_name, last_name, age, sex)
 
 class Subject(Person):
-    def __init__(self, first_name, last_name):
-        super().__init__(first_name, last_name)
+    def __init__(self, first_name, last_name, age, sex):
+        super().__init__(first_name, last_name, age, sex)
 
 
 class Experiment:
@@ -44,3 +44,5 @@ class Experiment:
     def save(self, filename):
         with open(filename, 'w') as f:
             json.dump(self.__dict__, f)
+
+
